@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrepToPerf – Politique de confidentialité</title>
+
+  <meta name="description" content="Politique de confidentialité de PrepToPerf (projet en développement). Détails RGPD, données traitées, bases légales et droits des utilisateurs." />
+  <meta property="og:title" content="PrepToPerf – Politique de confidentialité" />
+  <meta property="og:description" content="Comment PrepToPerf traite vos données, vos droits RGPD, et nos engagements de sécurité." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#5C2DD5" />
+
+  <style>
+    :root{
+      --brand:#5C2DD5;
+      --ink:#121212;
+      --muted:#6B6B6B;
+      --bg:#ffffff;
+      --surface:#F6F3FF;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);
+      backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #EEE;
+    }
+    .nav{max-width:var(--maxw);margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:var(--shadow)}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--brand);color:var(--brand)}
+    main{max-width:var(--maxw);margin:0 auto;padding:28px 20px 60px}
+    h1{font-size:34px;line-height:1.2;margin:18px 0}
+    h2{font-size:22px;margin:28px 0 10px}
+    p{margin:10px 0}
+    .card{background:#fff;border:1px solid #EEE;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 12px 20px}
+    footer{padding:28px 20px;border-top:1px solid #EEE;color:var(--muted);font-size:14px}
+    .kicker{display:inline-block;background:#EDE7FF;color:#4221B5;font-weight:600;padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.3px}
+    .panel{background:var(--surface);border:1px solid #E8E1FF;border-radius:var(--radius);padding:16px}
+    .toc{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}
+    .toc a{background:#fff;border:1px solid #EEE;border-radius:999px;padding:6px 10px;font-size:13px}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">P</div>
+        PrepToPerf
+      </div>
+      <nav>
+        <a class="btn" href="index.html">Retour à l’accueil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="kicker">Politique de confidentialité</p>
+    <h1>Comment nous protégeons vos données</h1>
+    <p class="muted">Dernière mise à jour : <span id="lastUpdated"></span></p>
+
+    <div class="panel small">
+      <strong>Statut du projet :</strong> PrepToPerf est actuellement en phase de conception/bêta privée. 
+      Les fonctionnalités décrites ci-dessous peuvent évoluer avant le lancement public. 
+      Nous appliquons le principe de <em>privacy by design</em> et minimisons les données collectées.
+    </div>
+
+    <div class="toc">
+      <a href="#identite">Identité du responsable</a>
+      <a href="#donnees">Données traitées</a>
+      <a href="#finalites">Finalités & bases légales</a>
+      <a href="#duree">Durées de conservation</a>
+      <a href="#destinataires">Destinataires & transferts</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#droits">Vos droits (RGPD)</a>
+      <a href="#cookies">Cookies</a>
+      <a href="#contact">Contact</a>
+      <a href="#maj">Mises à jour</a>
+    </div>
+
+    <section id="identite" class="card">
+      <h2>1) Identité du responsable du traitement</h2>
+      <p><strong>PrepToPerf</strong> – Projet porté par <strong>Didier PERRET</strong>.</p>
+      <p>Adresse postale : 162 rue du Pasturie C003 Les Bastides de Titin 13300 Salon de Provence<br/>
+         E-mail : <a href="didierperret69440@gmail.com">didierperret69440@gmail.com</a>
+      </p>
+      <p>À ce stade, l’entreprise n’est pas encore constituée juridiquement. Dès l’immatriculation, ces mentions seront mises à jour (dénomination, SIREN/SIRET le cas échéant).</p>
+    </section>
+
+    <section id="donnees" class="card">
+      <h2>2) Catégories de données que nous pouvons traiter</h2>
+      <ul>
+        <li><strong>Données de compte</strong> : e-mail, nom (si fourni), préférences.</li>
+        <li><strong>Données d’entraînement</strong> (optionnel, en bêta privée) : activités, métriques d’effort (FC, puissance, allures), planifications (séances et étapes).</li>
+        <li><strong>Données techniques</strong> : logs d’erreurs, informations de sécurité, identifiants de session.</li>
+      </ul>
+      <p class="muted small">Nous ne collectons pas de données “sensibles” au sens du RGPD (santé) sans base légale appropriée ni consentement explicite.</p>
+    </section>
+
+    <section id="finalites" class="card">
+      <h2>3) Finalités & bases légales</h2>
+      <ul>
+        <li><strong>Fourniture du service</strong> (génération de plans, synchronisations) – <em>Exécution d’un contrat</em> ou mesures précontractuelles.</li>
+        <li><strong>Connexion à des plateformes tierces</strong> (ex. Garmin, Strava, Apple Health) – <em>Consentement</em> (via OAuth/permissions).</li>
+        <li><strong>Amélioration produit & support</strong> (statistiques agrégées, correction d’erreurs) – <em>Intérêt légitime</em> avec minimisation et anonymisation lorsque possible.</li>
+        <li><strong>Communication</strong> (réponse aux demandes) – <em>Intérêt légitime</em>.</li>
+      </ul>
+    </section>
+
+    <section id="duree" class="card">
+      <h2>4) Durées de conservation</h2>
+      <ul>
+        <li>Données de compte : tant que le compte est actif, puis suppression sous 90 jours après clôture.</li>
+        <li>Données d’entraînement synchronisées : jusqu’au retrait de la connexion ou à la demande de suppression.</li>
+        <li>Logs techniques : 6 à 12 mois maximum (sécurité/diagnostic).</li>
+      </ul>
+    </section>
+
+    <section id="destinataires" class="card">
+      <h2>5) Destinataires & transferts</h2>
+      <p>Selon les fonctionnalités que vous activez :</p>
+      <ul>
+        <li><strong>Garmin Connect</strong> : lecture/écriture de séances structurées et/ou activités, conformément à vos autorisations.</li>
+        <li><strong>Strava</strong> : import des activités, statistiques.</li>
+        <li><strong>Apple Health</strong> : lecture de certaines données (santé/activité) via les permissions iOS.</li>
+      </ul>
+      <p>Hébergement & traitement : à ce stade, la vitrine publique peut être servie via <strong>GitHub Pages</strong>. Si des services cloud sont ajoutés (ex : UE/EEE), nous sélectionnerons des prestataires conformes RGPD et mettrons cette page à jour.</p>
+      <p>Transferts hors UE : si applicables, ils seront encadrés par des garanties appropriées (clauses contractuelles types, pays adéquats, etc.).</p>
+    </section>
+
+    <section id="securite" class="card">
+      <h2>6) Sécurité</h2>
+      <ul>
+        <li>Chiffrement en transit (HTTPS) pour toutes les communications.</li>
+        <li>Principe du moindre privilège & isolation des secrets.</li>
+        <li>Journalisation et supervision de base en bêta ; durcissement progressif avant lancement public.</li>
+      </ul>
+    </section>
+
+    <section id="droits" class="card">
+      <h2>7) Vos droits (RGPD)</h2>
+      <p>Vous disposez des droits d’accès, rectification, effacement, limitation, opposition et portabilité, ainsi que du droit de retirer votre consentement à tout moment.</p>
+      <p>Pour les exercer : <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a> (ou l’e-mail ci-dessous). Nous répondrons sous 30 jours.</p>
+      <p>Vous pouvez introduire une réclamation auprès de l’autorité compétente (ex. CNIL en France).</p>
+    </section>
+
+    <section id="cookies" class="card">
+      <h2>8) Cookies & traceurs</h2>
+      <p>La version actuelle n’emploie pas de cookies de suivi publicitaires. Si nous ajoutons des mesures d’audience ou des intégrations nécessitant des traceurs, une bannière de consentement sera présentée et cette section sera mise à jour.</p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>9) Contact</h2>
+      <p>
+        Responsable : <strong>Didier Perret</strong><br/>
+        E-mail : <a href="didierperret69440@gmail.com">
+          didierperret69440@gmail.com
+        </a><br/>
+        Adresse : 162 rue du Pasturie C003 Les Bastides de Titin
+      </p>
+    </section>
+
+    <section id="maj" class="card">
+      <h2>10) Mises à jour de cette politique</h2>
+      <p>Nous pouvons modifier cette page à mesure que le produit évolue. La date de mise à jour sera ajustée et, pour tout changement substantiel, une notification pourra s’afficher sur le site.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> PrepToPerf</div>
+      <div class="small">Projet en développement – ce document pourra évoluer avant le lancement public.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Dates dynamiques
+    const d = new Date();
+    document.getElementById('y').textContent = d.getFullYear();
+    document.getElementById('lastUpdated').textContent = d.toLocaleDateString('fr-FR', {
+      year:'numeric', month:'long', day:'2-digit'
+    });
+  </script>
+</body>
+</html>
