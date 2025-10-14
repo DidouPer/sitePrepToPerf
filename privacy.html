@@ -1,52 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Confidentialité – PrepToPerf</title>
-  <meta name="description" content="Politique de confidentialité PrepToPerf." />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <title>PrepToPerf — Politique de confidentialité</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4B1E70">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo.png">
 </head>
 <body>
-  <div id="site-header"></div>
 
-  <main class="container" style="padding-top:24px">
-    <h1>Politique de confidentialité</h1>
-    <p class="tiny">Dernière mise à jour : <span id="lastUpdated"></span></p>
+  <!-- HEADER -->
+  <div id="header-host"></div>
 
-    <div class="card" style="margin-top:16px">
-      <h2>1. Données collectées</h2>
-      <p>
-        Lors de l’inscription ou de l’utilisation des services, nous pouvons collecter : email, préférences sportives,
-        mesures d’entraînement (ex. rythme, FC, puissance) et informations techniques (appareil, navigateur).
-      </p>
+  <section>
+    <div class="container">
+      <div class="card" style="margin-bottom:18px; display:flex; align-items:center; gap:12px">
+        <img src="assets/logo.png" alt="PP" width="40" height="40" style="border-radius:999px">
+        <div>
+          <h1 style="margin:0;font-size:26px">Politique de confidentialité</h1>
+          <div class="tiny">Version 1.0 — Dernière mise à jour : <span id="pp-date"></span></div>
+        </div>
+      </div>
 
-      <h2>2. Finalités</h2>
-      <p>
-        Personnalisation de plans, suivi de progression, amélioration du service et, si vous l’acceptez, notifications.
-      </p>
+      <div class="card">
+        <h2>1. Qui sommes-nous ?</h2>
+        <p>PrepToPerf est un projet en cours de développement visant à proposer des plans d’entraînement
+          personnalisés et adaptatifs. L’entreprise n’est pas encore constituée ; l’hébergement et les
+          systèmes sont gérés par le porteur de projet.</p>
 
-      <h2>3. Partage</h2>
-      <p>
-        Les données ne sont partagées avec des plateformes tierces (ex. Garmin, Strava, Apple) que si vous connectez
-        volontairement ces services et dans le cadre de fonctionnalités explicitement demandées.
-      </p>
+        <h2>2. Données collectées</h2>
+        <ul>
+          <li>Données de contact fournies volontairement (email).</li>
+          <li>Éléments techniques anonymisés (logs d’erreur, métriques d’usage agrégées).</li>
+          <li>Aucune donnée de santé n’est collectée via ce site vitrine.</li>
+        </ul>
 
-      <h2>4. Sécurité</h2>
-      <p>
-        Nous appliquons des mesures techniques et organisationnelles proportionnées (chiffrement en transit, contrôle
-        d’accès, minimisation des données).
-      </p>
+        <h2>3. Finalités</h2>
+        <p>Répondre aux demandes de contact, améliorer le site, préparer les futures intégrations
+          (Garmin/Strava/Apple, sous réserve d’accords et permissions).</p>
 
-      <h2>5. Vos droits</h2>
-      <p>
-        Vous pouvez demander l’accès, la rectification et la suppression de vos données en nous écrivant à
-        <a href="mailto:contact@preptoperf.app">contact@preptoperf.app</a>.
-      </p>
+        <h2>4. Partage</h2>
+        <p>Aucun partage de données personnelles avec des tiers, sauf obligation légale.</p>
+
+        <h2>5. Sécurité</h2>
+        <p>Mesures raisonnables pour protéger les données (accès restreints, hébergement OVH). Le risque zéro n’existe pas.</p>
+
+        <h2>6. Vos droits</h2>
+        <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données en nous écrivant à
+          <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>.</p>
+
+        <h2>7. Cookies</h2>
+        <p>Ce site n’utilise pas de cookies de suivi à des fins publicitaires. Des cookies techniques
+           peuvent être utilisés (ex. protection anti-robots, statistiques anonymisées).</p>
+
+        <h2>8. Modifications</h2>
+        <p>La présente politique peut évoluer. La version à jour sera publiée sur cette page.</p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h2>Contact</h2>
+        <p>Pour toute question relative à la confidentialité : <a href="mailto:didierperret69440@gmail.com">
+          nous contacter par e-mail</a>.</p>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <div id="site-footer"></div>
+  <!-- FOOTER -->
+  <div id="footer-host"></div>
+
+  <script src="includes.js"></script>
+  <script>
+    document.getElementById('pp-date').textContent = new Date().toLocaleDateString('fr-FR');
+  </script>
 </body>
 </html>

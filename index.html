@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PrepToPerf – De la préparation à la performance</title>
-  <meta name="description" content="PrepToPerf génère des plans d’entraînement personnalisés grâce à l’IA et se synchronise avec vos appareils." />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <title>PrepToPerf — De la préparation à la performance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4B1E70">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo.png">
 </head>
 <body>
-  <!-- Header injecté -->
-  <div id="site-header"></div>
+
+  <!-- HEADER (inclus) -->
+  <div id="header-host"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -30,7 +32,12 @@
       </div>
 
       <div class="card">
-        <div class="mock" aria-hidden="true"></div>
+        <div class="mock">
+          <div class="mock-logo">
+            <img src="assets/logo.png" alt="PP">
+            <span>Plans multi-sports</span>
+          </div>
+        </div>
         <div class="tiny" style="margin-top:10px">
           Aperçu maquette – plans multi-sports, suivi charge & récupération.
         </div>
@@ -41,12 +48,12 @@
   <!-- FEATURES -->
   <section id="features">
     <div class="container">
-      <h2>Ce que fait PrepToPerf</h2>
+      <h2 style="margin:0 0 8px">Ce que fait PrepToPerf</h2>
       <p class="muted">Un coach intelligent, compatible avec votre écosystème sportif.</p>
-      <div class="grid cols-3">
+      <div class="grid cols-3" style="margin-top:18px">
         <div class="card feat">
           <h3>Plans générés par IA</h3>
-          <p>Objectif, dispo, niveau : nous produisons des micro-cycles réalistes et progressifs, avec séances “brick” pour triathlon.</p>
+          <p>Objectif, dispo, niveau : micro-cycles réalistes et progressifs, avec séances “brick” pour triathlon.</p>
         </div>
         <div class="card feat">
           <h3>Adaptation continue</h3>
@@ -61,11 +68,12 @@
   </section>
 
   <!-- INTEGRATIONS -->
-  <section class="integrations">
+  <section id="integrations" class="integrations">
     <div class="container">
-      <h2>Intégrations prévues</h2>
+      <h2 style="margin:0 0 8px">Intégrations prévues</h2>
       <p class="muted">Synchronisation des activités et des plans (lecture/écriture selon les API).</p>
-      <div class="grid cols-3">
+
+      <div class="grid cols-3" style="margin-top:18px">
         <div class="panel">
           <span class="logo-pill"><span class="logo-dot dot-garmin"></span>Garmin Connect</span>
           <p class="tiny" style="margin-top:10px">
@@ -118,19 +126,25 @@
     <div class="container">
       <h2>Contact</h2>
       <p class="muted">Une question, un partenariat, ou envie d’accéder à la beta privée ?</p>
-      <div class="card">
-        <p style="margin:0">
-          📧 <strong>E-mail :</strong>
-          <a href="mailto:contact@preptoperf.app">contact@preptoperf.app</a>
-        </p>
-        <p style="margin-top:8px">
-          🔗 <strong>Confidentialité :</strong> <a href="privacy.html">consulter la politique</a>
-        </p>
+      <div class="card" style="display:flex;gap:12px;align-items:flex-start">
+        <img src="assets/logo-full.png" alt="PrepToPerf" style="width:120px;max-width:40%;object-fit:contain">
+        <div>
+          <p style="margin:0">
+            📧 <strong>E-mail :</strong>
+            <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>
+          </p>
+          <p style="margin:8px 0 0">
+            🔗 <strong>Confidentialité :</strong> <a href="privacy.html">consulter la politique</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer injecté -->
-  <div id="site-footer"></div>
+  <!-- FOOTER (inclus) -->
+  <div id="footer-host"></div>
+
+  <!-- Includes (header/footer + scroll doux) -->
+  <script src="includes.js"></script>
 </body>
 </html>
