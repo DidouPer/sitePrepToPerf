@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrepToPerf – De la préparation à la performance</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="PrepToPerf est une app d'entraînement intelligente qui génère des plans personnalisés et se synchronise avec Garmin, Strava et Apple Health." />
+  <meta property="og:title" content="PrepToPerf – De la préparation à la performance" />
+  <meta property="og:description" content="Plans d'entraînement générés par IA, adaptés à vos données réelles. Intégrations: Garmin, Strava, Apple Health." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=PrepToPerf" />
+  <meta name="theme-color" content="#5C2DD5" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Crect width='100%25' height='100%25' rx='12' ry='12' fill='%235C2DD5'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Arial' font-size='34' fill='white'%3EP%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root{
+      --brand:#5C2DD5;       /* violet PrepToPerf */
+      --ink:#121212;         /* texte principal   */
+      --muted:#6B6B6B;       /* texte secondaire  */
+      --bg:#ffffff;          /* fond              */
+      --surface:#F6F3FF;     /* surface douce     */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(255,255,255,.8);
+      backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #EEE;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo{
+      width:36px;height:36px;border-radius:10px;background:var(--brand);
+      display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:var(--shadow)
+    }
+    .nav a.btn{padding:10px 16px;border:1px solid var(--brand);border-radius:10px}
+    .hero{padding:72px 0 32px;background:linear-gradient(180deg,var(--surface),#fff)}
+    .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .badge{display:inline-block;background:#EDE7FF;color:#4221B5;font-weight:600;padding:6px 10px;border-radius:999px;font-size:12px;letter-spacing:.3px}
+    h1{font-size:42px;line-height:1.15;margin:14px 0}
+    .lead{font-size:18px;color:var(--muted);margin-bottom:22px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      background:var(--brand);color:#fff;border:none;border-radius:12px;
+      padding:12px 18px;font-weight:700;box-shadow:var(--shadow);cursor:pointer
+    }
+    .btn.secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+    .card{
+      background:#fff;border:1px solid #EEE;border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:18px
+    }
+    .mock{
+      aspect-ratio:4/3;background:conic-gradient(from 180deg at 50% 50%, #eee, #f7f7ff, #eee);
+      border-radius:14px;border:1px solid #E9E9F7
+    }
+    section{padding:54px 0}
+    h2{font-size:28px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .feat{padding:18px}
+    .feat h3{margin:6px 0 6px;font-size:18px}
+    .integrations .logo-pill{
+      background:#fff;border:1px solid #EEE;border-radius:999px;padding:10px 16px;display:inline-flex;gap:10px;align-items:center;font-weight:600
+    }
+    .logo-dot{width:10px;height:10px;border-radius:50%}
+    .dot-garmin{background:#007CC3}
+    .dot-strava{background:#FC4C02}
+    .dot-apple{background:#000}
+    .panel{background:var(--surface);border:1px solid #E8E1FF;border-radius:var(--radius);padding:18px}
+    footer{padding:28px 0;border-top:1px solid #EEE;color:var(--muted);font-size:14px}
+    .tiny{font-size:13px;color:var(--muted)}
+    /* responsive */
+    @media (max-width:980px){.hero-inner{grid-template-columns:1fr}.mock{height:220px}}
+    @media (max-width:640px){h1{font-size:34px}}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">P</div>
+        PrepToPerf
+      </div>
+      <nav class="tiny">
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">Bientôt disponible • Beta privée</span>
+        <h1>De la préparation à la performance</h1>
+        <p class="lead">
+          PrepToPerf génère des plans d’entraînement personnalisés grâce à l’IA,
+          s’adapte à vos séances réelles (rythme, puissance, FC) et se synchronise avec vos appareils.
+        </p>
+        <div class="cta">
+          <a class="btn" href="#features">Découvrir</a>
+          <a class="btn secondary" href="privacy.html">Politique de confidentialité</a>
+        </div>
+        <p class="tiny" style="margin-top:10px">Version initiale prévue fin 2025.</p>
+      </div>
+      <div class="card">
+        <div class="mock" aria-hidden="true"></div>
+        <div class="tiny" style="margin-top:10px">
+          Aperçu maquette – plans multi-sports, suivi charge & récupération.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <h2>Ce que fait PrepToPerf</h2>
+      <p class="muted">Un coach intelligent, compatible avec votre écosystème sportif.</p>
+      <div class="grid cols-3">
+        <div class="card feat">
+          <h3>Plans générés par IA</h3>
+          <p>Objectif, dispo, niveau : nous produisons des micro-cycles réalistes et progressifs, avec séances “brick” pour triathlon.</p>
+        </div>
+        <div class="card feat">
+          <h3>Adaptation continue</h3>
+          <p>Le plan s’ajuste à vos données réelles (puissance, FC, allures) et à votre charge hebdo.</p>
+        </div>
+        <div class="card feat">
+          <h3>Export & plateformes</h3>
+          <p>Structure compatible export (séances, steps, répétitions) pour un envoi vers des services partenaires.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="integrations">
+    <div class="container">
+      <h2>Intégrations prévues</h2>
+      <p class="muted">Synchronisation des activités et des plans (lecture/écriture selon les API).</p>
+      <div class="grid cols-3">
+        <div class="panel">
+          <span class="logo-pill"><span class="logo-dot dot-garmin"></span>Garmin Connect</span>
+          <p class="tiny" style="margin-top:10px">
+            Lecture des activités, export de séances structurées (éligibles à l’écosystème Garmin).
+          </p>
+        </div>
+        <div class="panel">
+          <span class="logo-pill"><span class="logo-dot dot-strava"></span>Strava</span>
+          <p class="tiny" style="margin-top:10px">
+            Import/affichage des sorties et suivi de progression (selon permissions).
+          </p>
+        </div>
+        <div class="panel">
+          <span class="logo-pill"><span class="logo-dot dot-apple"></span>Apple Health</span>
+          <p class="tiny" style="margin-top:10px">
+            Consolidation de santé & récupération pour ajuster la charge d’entraînement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP / FAQ LIGHT -->
+  <section>
+    <div class="container">
+      <h2>Feuille de route</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Q4 2025 — Beta</h3>
+          <ul>
+            <li>Génération hebdo par objectifs & contraintes.</li>
+            <li>Export de séances structurées (steps & sub-steps).</li>
+            <li>Connexions Strava / Apple (lecture).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Q1 2026 — Public</h3>
+          <ul>
+            <li>Connecteurs élargis & plans auto-révisés.</li>
+            <li>Recommandations nutrition & récupération.</li>
+            <li>Partage coach/athlète (espace équipe).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="muted">Une question, un partenariat, ou envie d’accéder à la beta privée ?</p>
+      <div class="card">
+        <p style="margin:0">
+          📧 <strong>E-mail :</strong>
+          <a href="mailto:tonadresse@email.com">tonadresse@email.com</a>
+        </p>
+        <p style="margin-top:8px">
+          🔗 <strong>Confidentialité :</strong> <a href="privacy.html">consulter la politique</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> PrepToPerf</div>
+      <div class="tiny">Ce site présente un projet en développement. Marques citées appartenant à leurs propriétaires.</div>
+    </div>
+  </footer>
+
+  <script>
+    // année dynamique + scroll doux
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
