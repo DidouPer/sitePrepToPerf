@@ -1,37 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mentions légales – PrepToPerf</title>
-  <meta name="description" content="Mentions légales PrepToPerf." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prep To Perf — Mentions légales & Conditions</title>
+  <meta name="description" content="Mentions légales et conditions d’utilisation de Prep To Perf." />
+  <link rel="canonical" href="https://preptoperf.com/legal.html" />
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/favicon.svg" color="#4B1E70">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#4B1E70">
+  <meta property="og:title" content="Mentions légales & Conditions — Prep To Perf">
+  <meta property="og:description" content="Conditions d’utilisation, avertissements santé, limitations de responsabilité.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preptoperf.com/legal.html">
+  <meta property="og:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@preptoperf">
+  <meta name="twitter:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <script defer src="includes.js"></script>
 </head>
 <body>
-  <div id="site-header"></div>
+  <div data-include="partials/header.html"></div>
 
-  <main class="container" style="padding-top:24px">
-    <h1>Mentions légales</h1>
-    <div class="card" style="margin-top:16px">
+  <main class="container legal" id="main">
+    <h1>Mentions légales & Conditions d’utilisation</h1>
+
+    <section class="card">
       <h2>Éditeur</h2>
-      <p>
-        Projet PrepToPerf – statut : en cours de création d’entreprise.<br />
-        Contact : <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>
-      </p>
+      <p><strong>Prep To Perf</strong> (projet en cours de création d’entreprise).<br>
+      Contact : <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+    </section>
 
-      <h2>Hébergement</h2>
-      <p>
-        OVHcloud – 2 rue Kellermann, 59100 Roubaix, France. Hébergement mutualisé (Start10M)
-      </p>
+    <section class="card">
+      <h2>Objet</h2>
+      <p>Ces conditions régissent l’accès et l’utilisation du site et des services de <strong>Prep To Perf</strong>. 
+      En accédant au site, vous acceptez ces conditions.</p>
+    </section>
 
-      <h2>Propriété intellectuelle</h2>
-      <p>
-        Les contenus de ce site sont la propriété de leurs auteurs respectifs. Les marques citées appartiennent à leurs propriétaires.
-      </p>
-    </div>
+    <section class="card">
+      <h2>Avertissement santé (non-conseil médical)</h2>
+      <p><strong>Prep To Perf n’est pas un service médical.</strong> Les plans et informations fournis sont indicatifs et ne remplacent pas l’avis d’un professionnel de santé. 
+      Consultez un médecin avant tout programme sportif, notamment en cas de pathologie, blessure, grossesse, traitement, ou reprise.</p>
+      <p><strong>Vous restez responsable</strong> de l’évaluation de votre état physique et de l’adaptation des entraînements. 
+      Toute pratique sportive comporte des risques. <strong>Prep To Perf décline toute responsabilité</strong> en cas de blessure, fatigue excessive, dommages matériels, 
+      ou conséquences liées à l’usage du service.</p>
+    </section>
+
+    <section class="card">
+      <h2>Limitation de responsabilité</h2>
+      <ul>
+        <li>Service fourni “tel quel”, sans garantie de résultat ni de disponibilité.</li>
+        <li>Non-responsabilité pour pertes de données, erreurs d’export, intégrations tierces ou indisponibilités.</li>
+        <li>Exclusion de tout dommage indirect/spécial/consécutif, perte de chance ou de données, même signalé comme possible.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Âge minimum & compte</h2>
+      <p>Service réservé aux 16 ans et plus. Vous vous engagez à sécuriser vos accès et à fournir des informations exactes.</p>
+    </section>
+
+    <section class="card">
+      <h2>Contenus & propriété</h2>
+      <p>Les marques, logos (dont “Prep To Perf”) et contenus du site sont protégés. Toute reproduction est interdite sans autorisation.</p>
+    </section>
+
+    <section class="card">
+      <h2>Intégrations tierces</h2>
+      <p>Les intégrations (Garmin, Strava, Apple, etc.) sont soumises aux conditions de ces tiers. 
+      <strong>Aucune garantie</strong> de disponibilité/fonctionnement n’est donnée. Vous gérez vos autorisations.</p>
+    </section>
+
+    <section class="card">
+      <h2>Modification des conditions</h2>
+      <p>Nous pouvons modifier ces conditions à tout moment. La version à jour remplace les précédentes.</p>
+    </section>
+
+    <section class="card">
+      <h2>Droit applicable</h2>
+      <p>Droit français. Tribunaux compétents : ressort du siège de l’éditeur.</p>
+    </section>
+
+    <p class="tiny muted">Dernière mise à jour : {{YEAR}}.</p>
   </main>
 
-  <div id="site-footer"></div>
+  <div data-include="partials/footer.html"></div>
 </body>
 </html>

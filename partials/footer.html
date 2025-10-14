@@ -1,18 +1,26 @@
-<!-- Fragment footer – inclus via includes.js -->
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="assets/logo.png" alt="PP" width="24" height="24" style="border-radius:999px">
-      <span>© <span id="year"></span> PrepToPerf</span>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand-inline">
+        <img class="brand-logo small" src="assets/logo.png" alt="Prep To Perf" />
+        <strong>Prep To Perf</strong>
+      </div>
+      <p class="tiny muted">© <span id="year">{{YEAR}}</span> — Projet en développement.</p>
     </div>
-    <div class="tiny" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <div class="footer-links">
+      <a href="legal.html">Mentions & Conditions</a>
       <a href="privacy.html">Confidentialité</a>
-      <span>•</span>
       <a href="security.html">Sécurité</a>
-      <span>•</span>
-      <a href="legal.html">Mentions légales</a>
-      <span>•</span>
-      <span>Projet en développement. Marques citées appartenant à leurs propriétaires.</span>
+      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+    </div>
+    <div class="social social-footer">
+      <a href="https://instagram.com/preptoperf" aria-label="Instagram" class="ico insta" title="@preptoperf"></a>
+      <a href="https://facebook.com/preptoperf" aria-label="Facebook" class="ico fb" title="@preptoperf"></a>
+      <a href="https://twitter.com/preptoperf" aria-label="Twitter/X" class="ico x" title="@preptoperf"></a>
+      <a href="https://www.tiktok.com/@preptoperf" aria-label="TikTok" class="ico tiktok" title="@preptoperf"></a>
     </div>
   </div>
 </footer>
+<script>
+  (function(){var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }})();
+</script>

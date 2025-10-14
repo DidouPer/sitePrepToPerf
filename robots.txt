@@ -4,8 +4,6 @@ Allow: /
 
 # Ne pas indexer les fichiers techniques
 Disallow: /partials/
-Disallow: /assets/
-Disallow: /includes.js
 
 # Sitemap
 Sitemap: https://preptoperf.com/sitemap.xml

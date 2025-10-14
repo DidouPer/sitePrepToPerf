@@ -1,53 +1,93 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="PrepToPerf — plans d’entraînement générés par IA, adaptés à vos données sportives et compatibles Garmin, Strava et Apple Health." />
-  <title>PrepToPerf — De la préparation à la performance</title>
-
-  <!-- FAVICONS -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prep To Perf — De la préparation à la performance</title>
+  <meta name="description" content="Prep To Perf génère des plans d’entraînement personnalisés par IA, s’adapte à tes données (allures, puissance, FC) et se synchronise avec tes appareils." />
+  <link rel="canonical" href="https://preptoperf.com/" />
+  <!-- Favicons -->
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon.svg" color="#4B1E70">
   <meta name="theme-color" content="#4B1E70">
-
-  <!-- STYLES -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prep To Perf — De la préparation à la performance">
+  <meta property="og:description" content="Plans d’entraînement par IA, adaptés à tes données, prêts à exporter vers tes plateformes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://preptoperf.com/">
+  <meta property="og:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <meta property="og:site_name" content="Prep To Perf">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@preptoperf">
+  <meta name="twitter:creator" content="@preptoperf">
+  <meta name="twitter:title" content="Prep To Perf — De la préparation à la performance">
+  <meta name="twitter:description" content="Plans par IA, adaptation continue, exports vers vos appareils.">
+  <meta name="twitter:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="includes.js"></script>
 </head>
 <body>
-
-  <!-- HEADER (inclus) -->
-  <div id="header-host"></div>
+  <div data-include="partials/header.html"></div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="main">
     <div class="container hero-inner">
-      <div>
+      <div class="hero-copy">
         <span class="badge">Bientôt disponible • Beta privée</span>
         <h1>De la préparation à la performance</h1>
         <p class="lead">
-          PrepToPerf génère des plans d’entraînement personnalisés grâce à l’IA,
-          s’adapte à vos séances réelles (rythme, puissance, FC) et se synchronise avec vos appareils.
+          <strong>Prep To Perf</strong> génère des plans d’entraînement personnalisés grâce à l’IA,
+          s’adapte à tes séances réelles (rythme, puissance, FC) et se synchronise avec tes appareils.
         </p>
         <div class="cta">
           <a class="btn" href="#features">Découvrir</a>
-          <a class="btn secondary" href="privacy.html">Politique de confidentialité</a>
+          <a class="btn secondary" href="privacy.html">Confidentialité</a>
         </div>
-        <p class="tiny" style="margin-top:10px">Version initiale prévue fin 2025.</p>
+        <p class="tiny">Version initiale prévue fin 2025.</p>
+        <div class="social-inline">
+          <a href="https://instagram.com/preptoperf" aria-label="Instagram">@preptoperf</a>
+          <a href="https://facebook.com/preptoperf" aria-label="Facebook">@preptoperf</a>
+          <a href="https://twitter.com/preptoperf" aria-label="Twitter / X">@preptoperf</a>
+          <a href="https://www.tiktok.com/@preptoperf" aria-label="TikTok">@preptoperf</a>
+        </div>
+      </div>
+      <figure class="card mock-wrap">
+        <img class="mock" src="assets/capture1.png" alt="Aperçu du planning Prep To Perf" fetchpriority="high" width="323" height="700" />
+        <figcaption class="tiny muted">Aperçu — planning hebdo, intensités, étapes de séance.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="screens">
+    <div class="container">
+      <h2>Un coach qui s’adapte à toi</h2>
+      <p class="muted">Plans multi-sports, suivi de charge & récupération, exports structurés.</p>
+      <div class="grid cols-3 gallery-grid">
+        <img src="assets/capture2.png" alt="Détail séance cyclisme" loading="lazy" width="323" height="700" />
+        <img src="assets/capture3.png" alt="Profil sportif connecté" loading="lazy" width="323" height="700" />
+        <img src="assets/capture4.png" alt="Résumé de profil et génération de plan" loading="lazy" width="323" height="700" />
       </div>
 
-      <div class="card">
-        <div class="mock">
-          <div class="mock-logo">
-            <img src="assets/logo.png" alt="PP">
-            <span>Plans multi-sports</span>
+      <!-- Carousel (mobile/petit écran) -->
+      <div class="carousel" id="screens-carousel" aria-roledescription="carousel">
+        <div class="carousel-track" role="group" aria-label="Captures d’écran" aria-live="polite">
+          <div class="slide" aria-roledescription="slide" aria-label="1 sur 3">
+            <img src="assets/capture2.png" alt="Détail séance cyclisme" loading="lazy" width="323" height="700" />
+          </div>
+          <div class="slide" aria-roledescription="slide" aria-label="2 sur 3">
+            <img src="assets/capture3.png" alt="Profil sportif connecté" loading="lazy" width="323" height="700" />
+          </div>
+          <div class="slide" aria-roledescription="slide" aria-label="3 sur 3">
+            <img src="assets/capture4.png" alt="Résumé de profil et génération de plan" loading="lazy" width="323" height="700" />
           </div>
         </div>
-        <div class="tiny" style="margin-top:10px">
-          Aperçu maquette – plans multi-sports, suivi charge & récupération.
-        </div>
+        <button class="carousel-btn prev" aria-label="Précédent" type="button">‹</button>
+        <button class="carousel-btn next" aria-label="Suivant" type="button">›</button>
+        <div class="carousel-dots" role="tablist" aria-label="Navigation carousel"></div>
       </div>
     </div>
   </section>
@@ -55,49 +95,41 @@
   <!-- FEATURES -->
   <section id="features">
     <div class="container">
-      <h2 style="margin:0 0 8px">Ce que fait PrepToPerf</h2>
-      <p class="muted">Un coach intelligent, compatible avec votre écosystème sportif.</p>
-      <div class="grid cols-3" style="margin-top:18px">
+      <h2>Ce que fait Prep To Perf</h2>
+      <div class="grid cols-3">
         <div class="card feat">
           <h3>Plans générés par IA</h3>
           <p>Objectif, dispo, niveau : micro-cycles réalistes et progressifs, avec séances “brick” pour triathlon.</p>
         </div>
         <div class="card feat">
           <h3>Adaptation continue</h3>
-          <p>Le plan s’ajuste à vos données réelles (puissance, FC, allures) et à votre charge hebdo.</p>
+          <p>Le plan s’ajuste à tes données réelles (puissance, FC, allures) et à ta charge hebdomadaire.</p>
         </div>
         <div class="card feat">
           <h3>Export & plateformes</h3>
-          <p>Structure compatible export (séances, steps, répétitions) pour un envoi vers des services partenaires.</p>
+          <p>Structure compatible (séances, steps, répétitions) pour export vers des services partenaires.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- INTEGRATIONS -->
-  <section id="integrations" class="integrations">
+  <section class="integrations">
     <div class="container">
-      <h2 style="margin:0 0 8px">Intégrations prévues</h2>
+      <h2>Intégrations prévues</h2>
       <p class="muted">Synchronisation des activités et des plans (lecture/écriture selon les API).</p>
-
-      <div class="grid cols-3" style="margin-top:18px">
+      <div class="grid cols-3">
         <div class="panel">
           <span class="logo-pill"><span class="logo-dot dot-garmin"></span>Garmin Connect</span>
-          <p class="tiny" style="margin-top:10px">
-            Lecture des activités, export de séances structurées (éligibles à l’écosystème Garmin).
-          </p>
+          <p class="tiny">Lecture des activités, export de séances structurées.</p>
         </div>
         <div class="panel">
           <span class="logo-pill"><span class="logo-dot dot-strava"></span>Strava</span>
-          <p class="tiny" style="margin-top:10px">
-            Import/affichage des sorties et suivi de progression (selon permissions).
-          </p>
+          <p class="tiny">Import/affichage des sorties et suivi de progression (selon permissions).</p>
         </div>
         <div class="panel">
           <span class="logo-pill"><span class="logo-dot dot-apple"></span>Apple Health</span>
-          <p class="tiny" style="margin-top:10px">
-            Consolidation de santé & récupération pour ajuster la charge d’entraînement.
-          </p>
+          <p class="tiny">Consolidation santé & récupération pour ajuster la charge.</p>
         </div>
       </div>
     </div>
@@ -121,7 +153,7 @@
           <ul>
             <li>Connecteurs élargis & plans auto-révisés.</li>
             <li>Recommandations nutrition & récupération.</li>
-            <li>Partage coach/athlète (espace équipe).</li>
+            <li>Espace équipe (coach/athlète).</li>
           </ul>
         </div>
       </div>
@@ -132,26 +164,13 @@
   <section id="contact">
     <div class="container">
       <h2>Contact</h2>
-      <p class="muted">Une question, un partenariat, ou envie d’accéder à la beta privée ?</p>
-      <div class="card" style="display:flex;gap:12px;align-items:flex-start">
-        <img src="assets/logo-full.png" alt="PrepToPerf" style="width:120px;max-width:40%;object-fit:contain">
-        <div>
-          <p style="margin:0">
-            📧 <strong>E-mail :</strong>
-            <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>
-          </p>
-          <p style="margin:8px 0 0">
-            🔗 <strong>Confidentialité :</strong> <a href="privacy.html">consulter la politique</a>
-          </p>
-        </div>
+      <div class="card contact-card">
+        <p>📧 <strong>E-mail :</strong> <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+        <p class="tiny muted">Projet en développement. Les marques citées appartiennent à leurs propriétaires.</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER (inclus) -->
-  <div id="footer-host"></div>
-
-  <!-- Includes (header/footer + scroll doux) -->
-  <script src="includes.js"></script>
+  <div data-include="partials/footer.html"></div>
 </body>
 </html>

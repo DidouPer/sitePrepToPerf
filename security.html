@@ -1,33 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sécurité – PrepToPerf</title>
-  <meta name="description" content="Approche sécurité PrepToPerf." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prep To Perf — Sécurité</title>
+  <meta name="description" content="Pratiques de sécurité de Prep To Perf." />
+  <link rel="canonical" href="https://preptoperf.com/security.html" />
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/favicon.svg" color="#4B1E70">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <meta name="theme-color" content="#4B1E70">
+  <meta property="og:title" content="Sécurité — Prep To Perf">
+  <meta property="og:description" content="Approche, intégrations, responsabilités et limites de responsabilité.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preptoperf.com/security.html">
+  <meta property="og:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@preptoperf">
+  <meta name="twitter:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <script defer src="includes.js"></script>
 </head>
 <body>
-  <div id="site-header"></div>
+  <div data-include="partials/header.html"></div>
 
-  <main class="container" style="padding-top:24px">
+  <main class="container legal" id="main">
     <h1>Sécurité</h1>
-    <div class="card" style="margin-top:16px">
-      <h2>Mesures</h2>
-      <ul>
-        <li>Chiffrement en transit (HTTPS) sur les services applicatifs.</li>
-        <li>Journalisation et contrôle d’accès selon le principe du moindre privilège.</li>
-        <li>Minimisation, conservation limitée et suppression sur demande.</li>
-      </ul>
 
-      <h2>Signalement</h2>
-      <p>
-        Pour signaler une faille potentielle, contactez <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>.
-      </p>
-    </div>
+    <section class="card">
+      <h2>Approche</h2>
+      <p><strong>Prep To Perf</strong> applique une approche proportionnée au risque : chiffrement en transit (TLS), 
+      durcissement des accès administrateur, journalisation des événements techniques et principe du moindre privilège.</p>
+    </section>
+
+    <section class="card">
+      <h2>Données au repos & intégrations</h2>
+      <ul>
+        <li>Stockages gérés avec chiffrement au repos lorsqu’ils sont disponibles chez l’hébergeur.</li>
+        <li>Les intégrations tierces (Garmin, Strava, Apple) reposent sur OAuth et leurs politiques respectives. 
+            Nous n’accédons qu’aux portées autorisées par l’utilisateur.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Responsabilités de l’utilisateur</h2>
+      <ul>
+        <li>Protéger ses identifiants et appareils.</li>
+        <li>Révoquer l’accès aux plateformes tierces en cas de doute.</li>
+        <li>Nous signaler toute vulnérabilité présumée à <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Limitation de responsabilité</h2>
+      <p>Malgré nos efforts, aucun service n’offre une sécurité absolue. 
+      <strong>Prep To Perf décline toute responsabilité</strong> en cas de compromission liée à des tiers, 
+      à des attaques hors de notre contrôle raisonnable, ou à une mauvaise utilisation des accès par l’utilisateur.</p>
+    </section>
+
+    <p class="tiny muted">Dernière mise à jour : {{YEAR}}.</p>
   </main>
 
-  <div id="site-footer"></div>
+  <div data-include="partials/footer.html"></div>
 </body>
 </html>

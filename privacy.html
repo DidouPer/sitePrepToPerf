@@ -1,77 +1,98 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>PrepToPerf — Politique de confidentialité</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prep To Perf — Politique de confidentialité</title>
+  <meta name="description" content="Comment Prep To Perf traite vos données : finalités, bases légales, droits, conservation et sécurité." />
+  <link rel="canonical" href="https://preptoperf.com/privacy.html" />
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/favicon.svg" color="#4B1E70">
+  <link rel="manifest" href="assets/site.webmanifest">
   <meta name="theme-color" content="#4B1E70">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/logo.png">
+  <meta property="og:title" content="Politique de confidentialité — Prep To Perf">
+  <meta property="og:description" content="Transparence sur les données personnelles et les intégrations tierces.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://preptoperf.com/privacy.html">
+  <meta property="og:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@preptoperf">
+  <meta name="twitter:image" content="https://preptoperf.com/assets/og-1200x630.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@preptoperf">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="includes.js"></script>
 </head>
 <body>
+  <div data-include="partials/header.html"></div>
 
-  <!-- HEADER -->
-  <div id="header-host"></div>
+  <main class="container legal" id="main">
+    <h1>Politique de confidentialité</h1>
 
-  <section>
-    <div class="container">
-      <div class="card" style="margin-bottom:18px; display:flex; align-items:center; gap:12px">
-        <img src="assets/logo.png" alt="PP" width="40" height="40" style="border-radius:999px">
-        <div>
-          <h1 style="margin:0;font-size:26px">Politique de confidentialité</h1>
-          <div class="tiny">Version 1.0 — Dernière mise à jour : <span id="pp-date"></span></div>
-        </div>
-      </div>
+    <section class="card">
+      <h2>Responsable de traitement</h2>
+      <p><strong>Prep To Perf</strong> — Contact : <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+    </section>
 
-      <div class="card">
-        <h2>1. Qui sommes-nous ?</h2>
-        <p>PrepToPerf est un projet en cours de développement visant à proposer des plans d’entraînement
-          personnalisés et adaptatifs. L’entreprise n’est pas encore constituée ; l’hébergement et les
-          systèmes sont gérés par le porteur de projet.</p>
+    <section class="card">
+      <h2>Données collectées</h2>
+      <ul>
+        <li>Identité & contact (e-mail) pour échanger.</li>
+        <li>Préférences sportives & objectifs pour personnaliser.</li>
+        <li>Données d’activité importées des plateformes si vous les connectez (allures, puissance, FC).</li>
+        <li>Journaux techniques minimaux (erreurs, métriques agrégées de sécurité).</li>
+      </ul>
+      <p><em>Aucune vente de données ni profilage marketing.</em></p>
+    </section>
 
-        <h2>2. Données collectées</h2>
-        <ul>
-          <li>Données de contact fournies volontairement (email).</li>
-          <li>Éléments techniques anonymisés (logs d’erreur, métriques d’usage agrégées).</li>
-          <li>Aucune donnée de santé n’est collectée via ce site vitrine.</li>
-        </ul>
+    <section class="card">
+      <h2>Finalités & bases légales</h2>
+      <ul>
+        <li>Fourniture du service & génération de plans : exécution du contrat.</li>
+        <li>Amélioration produit & sécurité : intérêt légitime.</li>
+        <li>Intégrations tierces (Garmin/Strava/Apple…) : <strong>consentement</strong> via autorisations.</li>
+        <li>Support/communication : intérêt légitime / consentement.</li>
+      </ul>
+    </section>
 
-        <h2>3. Finalités</h2>
-        <p>Répondre aux demandes de contact, améliorer le site, préparer les futures intégrations
-          (Garmin/Strava/Apple, sous réserve d’accords et permissions).</p>
+    <section class="card">
+      <h2>Partage & sous-traitants</h2>
+      <p>Partage limité à l’hébergement/analytique et, si activé, aux plateformes connectées. 
+      Chaque tiers applique sa politique.</p>
+    </section>
 
-        <h2>4. Partage</h2>
-        <p>Aucun partage de données personnelles avec des tiers, sauf obligation légale.</p>
+    <section class="card">
+      <h2>Conservation</h2>
+      <p>Compte : tant qu’actif. Activités : jusqu’à suppression/déconnexion. Journaux : durée courte pour sécurité.</p>
+    </section>
 
-        <h2>5. Sécurité</h2>
-        <p>Mesures raisonnables pour protéger les données (accès restreints, hébergement OVH). Le risque zéro n’existe pas.</p>
+    <section class="card">
+      <h2>Vos droits</h2>
+      <p>Accès, rectification, effacement, limitation, portabilité, opposition. Pour exercer : 
+      <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>. Une preuve d’identité peut être demandée.</p>
+    </section>
 
-        <h2>6. Vos droits</h2>
-        <p>Vous pouvez demander l’accès, la rectification ou la suppression de vos données en nous écrivant à
-          <a href="mailto:didierperret69440@gmail.com">didierperret69440@gmail.com</a>.</p>
+    <section class="card">
+      <h2>Transferts hors UE</h2>
+      <p>Si un prestataire est hors UE, nous appliquons des garanties (clauses types, etc.).</p>
+    </section>
 
-        <h2>7. Cookies</h2>
-        <p>Ce site n’utilise pas de cookies de suivi à des fins publicitaires. Des cookies techniques
-           peuvent être utilisés (ex. protection anti-robots, statistiques anonymisées).</p>
+    <section class="card">
+      <h2>Cookies</h2>
+      <p>Site vitrine : cookies techniques uniquement, pas de publicité.</p>
+    </section>
 
-        <h2>8. Modifications</h2>
-        <p>La présente politique peut évoluer. La version à jour sera publiée sur cette page.</p>
-      </div>
+    <section class="card">
+      <h2>Sécurité & responsabilité</h2>
+      <p>Voir <a href="security.html">Sécurité</a>. Malgré nos mesures, aucun système n’est infaillible. 
+      <strong>Prep To Perf décline toute responsabilité</strong> en cas de faille, accès non autorisé d’un tiers ou 
+      mauvaise utilisation des accès par l’utilisateur.</p>
+    </section>
 
-      <div class="card" style="margin-top:18px">
-        <h2>Contact</h2>
-        <p>Pour toute question relative à la confidentialité : <a href="mailto:didierperret69440@gmail.com">
-          nous contacter par e-mail</a>.</p>
-      </div>
-    </div>
-  </section>
+    <p class="tiny muted">Dernière mise à jour : {{YEAR}}.</p>
+  </main>
 
-  <!-- FOOTER -->
-  <div id="footer-host"></div>
-
-  <script src="includes.js"></script>
-  <script>
-    document.getElementById('pp-date').textContent = new Date().toLocaleDateString('fr-FR');
-  </script>
+  <div data-include="partials/footer.html"></div>
 </body>
 </html>

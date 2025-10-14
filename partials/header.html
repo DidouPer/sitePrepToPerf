@@ -1,21 +1,28 @@
-<header class="site-header">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="manifest" href="assets/site.webmanifest">
-<meta name="theme-color" content="#4B1E70">
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="site-header" role="banner">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Accueil PrepToPerf">
-      <img class="logo-img" src="assets/logo.png" alt="Logo PrepToPerf">
-      <span>PrepToPerf</span>
+    <a href="index.html" class="brand">
+      <img class="brand-logo" src="assets/logo.png" alt="Logo Prep To Perf" />
+      <span class="brand-text">Prep To Perf</span>
     </a>
-    <nav>
-      <a href="index.html#features">Fonctionnalités</a>
-      <a href="index.html#integrations">Intégrations</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="security.html">Sécurité</a>
-      <a href="legal.html">Mentions légales</a>
-      <a class="btn" href="privacy.html" style="margin-left:8px">Confidentialité</a>
-    </nav>
+    <div class="nav-right" id="site-menu">
+      <nav class="nav-links" role="navigation" aria-label="Navigation principale">
+        <a href="index.html#features">Fonctionnalités</a>
+        <a href="legal.html">Mentions</a>
+        <a href="privacy.html">Confidentialité</a>
+        <a href="security.html">Sécurité</a>
+        <a class="btn small" href="mailto:{{EMAIL}}">Contact</a>
+      </nav>
+      <div class="social">
+        <a href="https://instagram.com/preptoperf" aria-label="Instagram" class="ico insta" title="@preptoperf"></a>
+        <a href="https://facebook.com/preptoperf" aria-label="Facebook" class="ico fb" title="@preptoperf"></a>
+        <a href="https://twitter.com/preptoperf" aria-label="Twitter/X" class="ico x" title="@preptoperf"></a>
+        <a href="https://www.tiktok.com/@preptoperf" aria-label="TikTok" class="ico tiktok" title="@preptoperf"></a>
+      </div>
+    </div>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  
 </header>
