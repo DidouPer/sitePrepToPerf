@@ -154,3 +154,39 @@ function initCarousel(selector){
 
   update();
 }
+
+// burger
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const btn = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  if (!btn || !header || !menu) return;
+
+  const toggle = () => {
+    const open = header.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+
+  btn.addEventListener('click', toggle);
+
+  // Ferme si on clique un lien du menu
+  menu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      header.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Ferme sur Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header.classList.contains('open')) {
+      header.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      btn.focus();
+    }
+  });
+});
