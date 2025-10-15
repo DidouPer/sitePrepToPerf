@@ -365,23 +365,15 @@ button:focus-visible {
   border-radius: 50%
 }
 
-.dot-garmin {
+.dot-bleu {
   background: #007cc3
 }
 
-.dot-strava {
+.dot-orange {
   background: #fc4c02
 }
 
-.dot-coros {
-  background: #fc4c02
-}
-
-.dot-suunto {
-  background: #fc4c02
-}
-
-.dot-apple {
+.dot-noir {
   background: #333
 }
 
