@@ -64,25 +64,41 @@ function initNav(){
   if(!header) return;
   const toggle = header.querySelector('.nav-toggle');
   const navRight = header.querySelector('.nav-right');
+  const menu = document.getElementById('site-menu');
+  const overlay = document.querySelector('.nav-overlay');
   if(!toggle || !navRight) return;
 
   const close = () => {
     header.classList.remove('open');
     toggle.setAttribute('aria-expanded','false');
     toggle.setAttribute('aria-label','Ouvrir le menu');
+    overlay && overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.removeProperty('overflow');
   };
   const open = () => {
     header.classList.add('open');
     toggle.setAttribute('aria-expanded','true');
     toggle.setAttribute('aria-label','Fermer le menu');
+    overlay && overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   };
 
-  toggle.addEventListener('click', () => {
+  const handleToggle = () => {
     if(header.classList.contains('open')) close(); else open();
+  };
+
+  toggle.addEventListener('click', handleToggle);
+  overlay && overlay.addEventListener('click', close);
+
+  // Close on link tap
+  const clickArea = menu || navRight;
+  clickArea && clickArea.addEventListener('click', (event) => {
+    if(event.target.tagName === 'A') close();
   });
 
-  // Close on link click
-  navRight.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  document.addEventListener('keydown', (event) => {
+    if(event.key === 'Escape' && header.classList.contains('open')) close();
+  });
 
   // Close when resizing to desktop
   window.addEventListener('resize', () => {
@@ -154,35 +170,3 @@ function initCarousel(selector){
 
   update();
 }
-
-// burger
-document.addEventListener('DOMContentLoaded', () => {
-  const header  = document.querySelector('.site-header');
-  const btn     = document.querySelector('.nav-toggle');
-  const menu    = document.getElementById('site-menu');
-  const overlay = document.querySelector('.nav-overlay');
-
-  if (!btn || !header || !menu || !overlay) return;
-
-  const setOpen = (open) => {
-    header.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.style.overflow = open ? 'hidden' : '';
-  };
-
-  const toggle = () => setOpen(!header.classList.contains('open'));
-
-  btn.addEventListener('click', toggle);
-  overlay.addEventListener('click', () => setOpen(false));
-
-  // Ferme si on clique un lien
-  menu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') setOpen(false);
-  });
-
-  // Ferme sur Échap
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && header.classList.contains('open')) setOpen(false);
-  });
-});
-
