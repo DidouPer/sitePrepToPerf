@@ -1,7 +1,7 @@
 // Partials + variables simples
 const INCLUDE_VARS = {
   EMAIL: "didierperret69440@gmail.com",
-  BRAND: "Prep To Perf",
+  BRAND: "Prep to Perf",
   YEAR: new Date().getFullYear().toString()
 };
 
