@@ -25,6 +25,40 @@ async function injectPartials() {
   }));
 }
 
+// Remplace {{VARS}} dans l'ensemble du document (texte et attributs),
+// en évitant les balises <script> et <style>
+function replaceVariablesInDocument(root){
+  const re = /\{\{(\w+)\}\}/g;
+  const replaceText = (text) => text.replace(re, (_, k) => INCLUDE_VARS[k] ?? _);
+
+  const walk = (node) => {
+    if(!node) return;
+    if(node.nodeType === Node.ELEMENT_NODE){
+      const el = node;
+      const tag = (el.tagName || '').toLowerCase();
+      if(tag === 'script' || tag === 'style') return; // ne pas toucher
+
+      // Remplacer dans les attributs
+      if(el.attributes){
+        for(const attr of Array.from(el.attributes)){
+          const v = attr.value;
+          const nv = replaceText(v);
+          if(nv !== v) el.setAttribute(attr.name, nv);
+        }
+      }
+
+      // Parcourir les enfants
+      for(const child of Array.from(el.childNodes)) walk(child);
+    } else if(node.nodeType === Node.TEXT_NODE){
+      const v = node.nodeValue || '';
+      const nv = replaceText(v);
+      if(nv !== v) node.nodeValue = nv;
+    }
+  };
+
+  walk(root || document.body);
+}
+
 function initNav(){
   const header = document.querySelector('.site-header');
   if(!header) return;
@@ -58,6 +92,12 @@ function initNav(){
 
 document.addEventListener("DOMContentLoaded", async () => {
   await injectPartials();
+  // Après l'injection des partials, remplace aussi les variables {{...}} dans la page courante
+  try {
+    replaceVariablesInDocument(document.body);
+  } catch(e) {
+    console.error('Variable replacement failed', e);
+  }
   initNav();
   initCarousel('#screens-carousel');
 });
