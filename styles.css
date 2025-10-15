@@ -73,7 +73,7 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1200;
   background: #fff;
   border-bottom: 1px solid var(--border);
   backdrop-filter: saturate(140%) blur(6px);
@@ -627,7 +627,7 @@ section {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,.28);           /* assombrit le fond */
-  z-index: 1000;
+  z-index: 1100;
 }
 .site-header.open ~ .nav-overlay{ display: block; }
 
