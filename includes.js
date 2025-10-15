@@ -157,36 +157,32 @@ function initCarousel(selector){
 
 // burger
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('.site-header');
-  const btn = document.querySelector('.nav-toggle');
-  const menu = document.getElementById('mobile-menu');
+  const header  = document.querySelector('.site-header');
+  const btn     = document.querySelector('.nav-toggle');
+  const menu    = document.getElementById('site-menu');
+  const overlay = document.querySelector('.nav-overlay');
 
-  if (!btn || !header || !menu) return;
+  if (!btn || !header || !menu || !overlay) return;
 
-  const toggle = () => {
-    const open = header.classList.toggle('open');
+  const setOpen = (open) => {
+    header.classList.toggle('open', open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     document.body.style.overflow = open ? 'hidden' : '';
   };
 
-  btn.addEventListener('click', toggle);
+  const toggle = () => setOpen(!header.classList.contains('open'));
 
-  // Ferme si on clique un lien du menu
+  btn.addEventListener('click', toggle);
+  overlay.addEventListener('click', () => setOpen(false));
+
+  // Ferme si on clique un lien
   menu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      header.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
+    if (e.target.tagName === 'A') setOpen(false);
   });
 
   // Ferme sur Échap
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && header.classList.contains('open')) {
-      header.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      btn.focus();
-    }
+    if (e.key === 'Escape' && header.classList.contains('open')) setOpen(false);
   });
 });
+
