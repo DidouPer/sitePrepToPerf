@@ -1,0 +1,99 @@
+<!--
+Section comparatif Freemium vs Premium — Prep to Perf
+- Compatible avec votre palette (variables CSS déjà présentes)
+- 100% HTML/CSS, sans framework ni images externes
+- Responsive (mobile d'abord), accessible, SEO-friendly
+- Inclut microcopy FR, badges, CTA, et liste des features
+-->
+
+
+<section id="pricing" aria-labelledby="pricing-title" class="pricing">
+<div class="container">
+<header class="pricing__header">
+<h2 id="pricing-title">Choisissez votre coach</h2>
+<p class="pricing__subtitle">Une vraie valeur en <strong>freemium</strong> pour démarrer. Un <strong>Premium</strong> complet pour progresser vite.</p>
+</header>
+
+
+<div class="pricing__grid" role="list">
+<!-- Freemium Card -->
+<article class="card" role="listitem" aria-labelledby="freemium-title">
+<div class="card__head">
+<span class="badge badge--muted">Gratuit</span>
+<h3 id="freemium-title">Freemium</h3>
+<p class="card__kicker">Testez votre coach intelligent</p>
+<p class="price"><span class="price__value">0€</span><span class="price__per">/mois</span></p>
+</div>
+<ul class="features" aria-label="Fonctionnalités Freemium">
+<li class="ok">Création complète du profil (Running, Cycling, Strength, Swimming)</li>
+<li class="ok">Import d’activités (Garmin / Strava) — lecture seule</li>
+<li class="ok">1 plan <em>Découverte</em> (4 semaines) par sport</li>
+<li class="ok">Planning hebdo (lecture)</li>
+<li class="ok">Statistiques simples (volume, durée, distance)</li>
+<li class="ko">Export automatique vers la montre</li>
+<li class="ko">Analyses avancées (TSS/CTL/ATL, polarisation)</li>
+<li class="ko">Coaching adaptatif et multi‑sport</li>
+</ul>
+<div class="card__cta">
+<a class="btn btn--outline" href="#signup" aria-label="Créer un compte gratuit">Commencer gratuitement</a>
+</div>
+</article>
+
+
+<!-- Premium Card -->
+<article class="card card--highlight" role="listitem" aria-labelledby="premium-title">
+<div class="card__head">
+<span class="badge badge--primary">Recommandé</span>
+<h3 id="premium-title">Premium</h3>
+<p class="card__kicker">Votre coach personnel connecté</p>
+<p class="price"><span class="price__value">4,99€</span><span class="price__per">/mois</span></p>
+</div>
+<ul class="features" aria-label="Fonctionnalités Premium">
+<li class="ok">Génération <strong>illimitée</strong> de plans personnalisés</li>
+<li class="ok">Adaptation automatique selon charge, fatigue, imprévus</li>
+<li class="ok">Export des séances vers Garmin, Coros, Suunto, Apple Watch</li>
+<li class="ok">Création de séances avancées (blocs, cibles FC/puissance/allure)</li>
+<li class="ok">Analyses complètes : TSS/CTL/ATL, polarisation, progression</li>
+<li class="ok">Comparaison prévue / réalisée avec recommandations</li>
+<li class="ok">Multi‑sport (Running + Strength + Vélo + Triathlon)</li>
+<li class="ok">Support prioritaire + accès aux nouveautés en avant‑première</li>
+</ul>
+<div class="card__cta">
+<a class="btn btn--primary" href="#checkout" aria-label="Passer à Premium">Passer à Premium</a>
+<p class="footnote">Annulez à tout moment. <a href="#faq-pricing">Voir la FAQ</a>.</p>
+</div>
+</article>
+</div>
+
+
+<!-- Bandeau preuves sociales / différenciation -->
+<div class="trust">
+<ul class="trust__list" aria-label="Preuves et garanties">
+<li><span class="ic ic--shield" aria-hidden="true"></span>Sans engagement</li>
+<li><span class="ic ic--spark" aria-hidden="true"></span>No‑Bullsh*t Smart Coach</li>
+<li><span class="ic ic--sync" aria-hidden="true"></span>Sync Strava / Garmin</li>
+</ul>
+</div>
+</div>
+</section>
+
+
+<style>
+/* Utilise votre palette si définie, sinon fallback */
+:root {
+--primary: var(--primary, #4B1E70);
+--primaryLight: var(--primaryLight, #985be2);
+--primaryXL: var(--primaryXL, #f3e9fc);
+--text: var(--text, #2c1452);
+--muted: var(--muted, #7e7e90);
+--border: var(--border, #e0d4f3);
+--white: var(--white, #fff);
+--bg: #faf8ff;
+}
+
+
+.pricing { padding: clamp(2rem, 3vw, 4rem) 0; background: var(--bg); }
+.pricing .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+.pricing__header { text-align: center; margin-bottom: 1.5rem; }
+.pricing__header h2 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text); }
+</style>
