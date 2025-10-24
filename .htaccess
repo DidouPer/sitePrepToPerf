@@ -1,9 +1,24 @@
-# Forcer HTTPS
+# ---------- Redirections canoniques ----------
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Caching statique (ajuste durées si besoin)
+# 1) Force domaine nu (supprime www) ET HTTPS (couvre http(s)://www.* et http://nu)
+RewriteCond %{HTTP_HOST} ^www\.preptoperf\.com$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://preptoperf.com%{REQUEST_URI} [R=301,L]
+
+# ---------- En-têtes SEO & sécurité ----------
+# (OVH mutualisé supporte généralement mod_headers)
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "geolocation=()"
+# Déclare explicitement l'indexation
+Header set X-Robots-Tag "index, follow"
+
+# HSTS (uniquement si TOUT le site est en HTTPS et stable)
+# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# ---------- Caching statique ----------
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 7 days"
@@ -15,22 +30,19 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
   ExpiresDefault "access plus 1 day"
 </IfModule>
 
-# Gzip/Brotli si dispo sur le cluster
+# ---------- Compression ----------
+# Brotli n'est pas dispo en mutualisé OVH ; DEFLATE suffit
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/plain image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript image/svg+xml
 </IfModule>
 
-# Charset & sécurité de base
+# ---------- Divers ----------
 AddDefaultCharset UTF-8
-Header always set X-Content-Type-Options "nosniff"
-Header always set X-Frame-Options "SAMEORIGIN"
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-Header always set Permissions-Policy "geolocation=()"
 Options -Indexes
 
-# Serve correct MIME for webmanifest
+# MIME correct pour webmanifest
 AddType application/manifest+json .webmanifest
 
-# Compatibility rewrites (prevent 404s)
+# Compat' : éviter 404 si quelqu'un demande des noms anciens
 RewriteRule ^site\.webmanifest$ assets/site.webmanifest [L]
 RewriteRule ^logoPrepToPerf\.png$ assets/logo.png [L]
